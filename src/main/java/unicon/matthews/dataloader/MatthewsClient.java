@@ -89,7 +89,6 @@ public class MatthewsClient {
       _matthewsClient.httpHeaders.add("X-Requested-With", "XMLHttpRequest");
       
       _matthewsClient.httpHeaders.add("Authorization", "Bearer "+_matthewsClient.getToken());
-      
       return _matthewsClient;
     }
   }
@@ -118,7 +117,7 @@ public class MatthewsClient {
     
     String path = "/api/classes/{classSourcedId}/enrollments";
     String url = this.baseUrl + StringUtils.replace(path, "{classSourcedId}", enrollment.getKlass().getSourcedId());
-    
+
     restTemplate
     .exchange(url, HttpMethod.POST, he, JsonObject.class);
   }
