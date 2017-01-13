@@ -25,16 +25,17 @@ The Matthews admin user interface is under development so you'll have to find yo
     "type" : "other"
   }
 }
+```````````````````
 
 Find the values apiKey and apiSecret, those are the values you'll need to use to create a session with Matthews. In the example above the key i abcdef and the secret is 123456
 
 ### Running the demo data loader
-``````
-mvn clean package spring-boot:run -Dmatthews.apikey=<your matthews api key> -Dmatthews.apisecret=<your matthews api secret>
-``````
+`````
+mvn clean package spring-boot:run -Dmatthews.apikey=your matthews api key -Dmatthews.apisecret=your matthews api secret
+`````
 
 Note if you are not running Matthews on localhost with the default port (9966) you will also need to pass:
 
 `````
--Dmatthews.baseurl=<your matthews base url> // e.g., -Dmatthews.baseurl=https://lrw.cloudlrs.com
+-Dmatthews.baseurl=your matthews base url // e.g., -Dmatthews.baseurl=https://lrw.cloudlrs.com
 `````
