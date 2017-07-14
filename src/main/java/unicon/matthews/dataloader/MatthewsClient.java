@@ -176,4 +176,15 @@ public class MatthewsClient {
     restTemplate
         .exchange(url, HttpMethod.POST, h, String.class);
   }
+  
+  public void postClass(unicon.matthews.oneroster.Class klass) {
+    HttpEntity<unicon.matthews.oneroster.Class> he = new HttpEntity<unicon.matthews.oneroster.Class>(klass, this.httpHeaders);
+    
+    String path = "/api/classes";
+    String url = this.baseUrl + path;
+
+    restTemplate
+        .exchange(url, HttpMethod.POST, he, JsonObject.class);
+  }
+
 }

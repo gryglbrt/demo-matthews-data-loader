@@ -10,6 +10,7 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -29,6 +30,7 @@ import unicon.matthews.caliper.Agent;
 import unicon.matthews.caliper.Entity;
 import unicon.matthews.caliper.Event;
 import unicon.matthews.caliper.Group;
+import unicon.matthews.caliper.Membership;
 import unicon.matthews.dataloader.DataLoader;
 import unicon.matthews.dataloader.MatthewsClient;
 import unicon.matthews.oneroster.Class;
@@ -59,18 +61,18 @@ public class DemoDataLoader implements DataLoader {
     // Class Metadata
     
     Map<String, String> metadata1 = new HashMap<>();   
-    metadata1.put(Vocabulary.CLASS_START_DATE, LocalDate.of(2016, 8, 30).toString());
-    metadata1.put(Vocabulary.CLASS_END_DATE, LocalDate.of(2016, 12, 11).toString());
+    metadata1.put(Vocabulary.CLASS_START_DATE, LocalDate.of(2017, 6, 30).toString());
+    metadata1.put(Vocabulary.CLASS_END_DATE, LocalDate.of(2017, 12, 11).toString());
     metadata1.put(Vocabulary.SOURCE_SYSTEM, "DEMO");
     
     Map<String, String> metadata2 = new HashMap<>();
-    metadata2.put(Vocabulary.CLASS_START_DATE, LocalDate.of(2016, 9, 1).toString());
-    metadata2.put(Vocabulary.CLASS_END_DATE, LocalDate.of(2016, 12, 10).toString());
+    metadata2.put(Vocabulary.CLASS_START_DATE, LocalDate.of(2017, 6, 1).toString());
+    metadata2.put(Vocabulary.CLASS_END_DATE, LocalDate.of(2017, 12, 10).toString());
     metadata2.put(Vocabulary.SOURCE_SYSTEM, "DEMO");
 
     Map<String, String> metadata3 = new HashMap<>();
-    metadata3.put(Vocabulary.CLASS_START_DATE, LocalDate.of(2016, 9, 8).toString());
-    metadata3.put(Vocabulary.CLASS_END_DATE, LocalDate.of(2016, 12, 13).toString());
+    metadata3.put(Vocabulary.CLASS_START_DATE, LocalDate.of(2017, 6, 8).toString());
+    metadata3.put(Vocabulary.CLASS_END_DATE, LocalDate.of(2017, 12, 13).toString());
     metadata3.put(Vocabulary.SOURCE_SYSTEM, "DEMO");
     
     classMetadataMap.put("metadata1", metadata1);
@@ -249,8 +251,8 @@ public class DemoDataLoader implements DataLoader {
         .withStatus(Status.active)
         .withTitle("Hands-on Lab")
         .withDescription("Learn how to use the microscope.")
-        .withAssignDate(LocalDateTime.of(2016, 9, 7, 0, 0))
-        .withDueDate(LocalDateTime.of(2016, 9, 14, 0, 0))
+        .withAssignDate(LocalDateTime.of(2017, 9, 7, 0, 0))
+        .withDueDate(LocalDateTime.of(2017, 9, 14, 0, 0))
         .withClass(class1)
         .withCategory(lab)
         .build();
@@ -261,8 +263,8 @@ public class DemoDataLoader implements DataLoader {
       .withStatus(Status.active)
       .withTitle("Lab Report")
       .withDescription("Report on observations")
-      .withAssignDate(LocalDateTime.of(2016, 9, 7,0,0))
-      .withDueDate(LocalDateTime.of(2016, 10, 1,0,0))
+      .withAssignDate(LocalDateTime.of(2017, 9, 7,0,0))
+      .withDueDate(LocalDateTime.of(2017, 10, 1,0,0))
       .withClass(class1)
       .withCategory(report)
       .build();
@@ -273,8 +275,8 @@ public class DemoDataLoader implements DataLoader {
       .withStatus(Status.active)
       .withTitle("Midterm Exam")
       .withDescription("Good luck!")
-      .withAssignDate(LocalDateTime.of(2016, 9, 1,0,0))
-      .withDueDate(LocalDateTime.of(2016, 10, 27,0,0))
+      .withAssignDate(LocalDateTime.of(2017, 9, 1,0,0))
+      .withDueDate(LocalDateTime.of(2017, 10, 27,0,0))
       .withClass(class1)
       .withCategory(exam)
       .build();
@@ -284,8 +286,8 @@ public class DemoDataLoader implements DataLoader {
       .withSourcedId("class1_li3")
       .withStatus(Status.active)
       .withTitle("Quiz #1")
-      .withAssignDate(LocalDateTime.of(2016, 11, 15,0,0))
-      .withDueDate(LocalDateTime.of(2016, 11, 15,0,0))
+      .withAssignDate(LocalDateTime.of(2017, 11, 15,0,0))
+      .withDueDate(LocalDateTime.of(2017, 11, 15,0,0))
       .withClass(class1)
       .withCategory(quiz)
       .build();
@@ -296,8 +298,8 @@ public class DemoDataLoader implements DataLoader {
       .withStatus(Status.active)
       .withTitle("Final Exam")
       .withDescription("Enjoy break!")
-      .withAssignDate(LocalDateTime.of(2016, 9, 1,0,0))
-      .withDueDate(LocalDateTime.of(2016, 12, 10,0,0))
+      .withAssignDate(LocalDateTime.of(2017, 9, 1,0,0))
+      .withDueDate(LocalDateTime.of(2017, 12, 10,0,0))
       .withClass(class1)
       .withCategory(exam)
       .build();
@@ -308,8 +310,8 @@ public class DemoDataLoader implements DataLoader {
       .withStatus(Status.active)
       .withTitle("Hands-on Lab")
       .withDescription("Compounds and more!")
-      .withAssignDate(LocalDateTime.of(2016, 9, 2,0,0))
-      .withDueDate(LocalDateTime.of(2016, 9, 19,0,0))
+      .withAssignDate(LocalDateTime.of(2017, 9, 2,0,0))
+      .withDueDate(LocalDateTime.of(2017, 9, 19,0,0))
       .withClass(class2)
       .withCategory(lab)
       .build();
@@ -320,8 +322,8 @@ public class DemoDataLoader implements DataLoader {
       .withStatus(Status.active)
       .withTitle("Lab Report")
       .withDescription("Report on compounds")
-      .withAssignDate(LocalDateTime.of(2016, 9, 2,0,0))
-      .withDueDate(LocalDateTime.of(2016, 10, 15,0,0))
+      .withAssignDate(LocalDateTime.of(2017, 9, 2,0,0))
+      .withDueDate(LocalDateTime.of(2017, 10, 15,0,0))
       .withClass(class2)
       .withCategory(report)
       .build();
@@ -332,8 +334,8 @@ public class DemoDataLoader implements DataLoader {
       .withStatus(Status.active)
       .withTitle("Quiz #1")
       .withDescription("Knowledge check")
-      .withAssignDate(LocalDateTime.of(2016, 9, 2,0,0))
-      .withDueDate(LocalDateTime.of(2016, 10, 19,0,0))
+      .withAssignDate(LocalDateTime.of(2017, 9, 2,0,0))
+      .withDueDate(LocalDateTime.of(2017, 10, 19,0,0))
       .withClass(class2)
       .withCategory(report)
       .build();
@@ -344,8 +346,8 @@ public class DemoDataLoader implements DataLoader {
       .withStatus(Status.active)
       .withTitle("Midterm Exam")
       .withDescription("Good luck!")
-      .withAssignDate(LocalDateTime.of(2016, 9, 2,0,0))
-      .withDueDate(LocalDateTime.of(2016, 10, 30,0,0))
+      .withAssignDate(LocalDateTime.of(2017, 9, 2,0,0))
+      .withDueDate(LocalDateTime.of(2017, 10, 30,0,0))
       .withClass(class2)
       .withCategory(exam)
       .build();
@@ -355,8 +357,8 @@ public class DemoDataLoader implements DataLoader {
       .withSourcedId("class2_li3")
       .withStatus(Status.active)
       .withTitle("Quiz #2")
-      .withAssignDate(LocalDateTime.of(2016, 11, 15,0,0))
-      .withDueDate(LocalDateTime.of(2016, 11, 19,0,0))
+      .withAssignDate(LocalDateTime.of(2017, 11, 15,0,0))
+      .withDueDate(LocalDateTime.of(2017, 11, 19,0,0))
       .withClass(class2)
       .withCategory(quiz)
       .build();
@@ -367,8 +369,8 @@ public class DemoDataLoader implements DataLoader {
       .withStatus(Status.active)
       .withTitle("Final Exam")
       .withDescription("Enjoy break!")
-      .withAssignDate(LocalDateTime.of(2016, 9, 2,0,0))
-      .withDueDate(LocalDateTime.of(2016, 12, 6,0,0))
+      .withAssignDate(LocalDateTime.of(2017, 9, 2,0,0))
+      .withDueDate(LocalDateTime.of(2017, 12, 6,0,0))
       .withClass(class2)
       .withCategory(exam)
       .build();
@@ -379,8 +381,8 @@ public class DemoDataLoader implements DataLoader {
       .withStatus(Status.active)
       .withTitle("Hands-on Lab")
       .withDescription("Disection! The innards of ficus.")
-      .withAssignDate(LocalDateTime.of(2016, 9, 10,0,0))
-      .withDueDate(LocalDateTime.of(2016, 9, 15,0,0))
+      .withAssignDate(LocalDateTime.of(2017, 9, 10,0,0))
+      .withDueDate(LocalDateTime.of(2017, 9, 15,0,0))
       .withClass(class3)
       .withCategory(lab)
       .build();
@@ -391,8 +393,8 @@ public class DemoDataLoader implements DataLoader {
       .withStatus(Status.active)
       .withTitle("Lab Report")
       .withDescription("Report on discection")
-      .withAssignDate(LocalDateTime.of(2016, 9, 10,0,0))
-      .withDueDate(LocalDateTime.of(2016, 10, 1,0,0))
+      .withAssignDate(LocalDateTime.of(2017, 9, 10,0,0))
+      .withDueDate(LocalDateTime.of(2017, 10, 1,0,0))
       .withClass(class3)
       .withCategory(report)
       .build();
@@ -403,8 +405,8 @@ public class DemoDataLoader implements DataLoader {
       .withStatus(Status.active)
       .withTitle("Quiz #1")
       .withDescription("Knowledge check")
-      .withAssignDate(LocalDateTime.of(2016, 9, 19,0,0))
-      .withDueDate(LocalDateTime.of(2016, 10, 17,0,0))
+      .withAssignDate(LocalDateTime.of(2017, 9, 19,0,0))
+      .withDueDate(LocalDateTime.of(2017, 10, 17,0,0))
       .withClass(class3)
       .withCategory(report)
       .build();
@@ -415,8 +417,8 @@ public class DemoDataLoader implements DataLoader {
       .withStatus(Status.active)
       .withTitle("Midterm Exam")
       .withDescription("Good luck!")
-      .withAssignDate(LocalDateTime.of(2016, 9, 17,0,0))
-      .withDueDate(LocalDateTime.of(2016, 11, 1,0,0))
+      .withAssignDate(LocalDateTime.of(2017, 9, 17,0,0))
+      .withDueDate(LocalDateTime.of(2017, 11, 1,0,0))
       .withClass(class3)
       .withCategory(exam)
       .build();
@@ -426,8 +428,8 @@ public class DemoDataLoader implements DataLoader {
       .withSourcedId("class3_li3")
       .withStatus(Status.active)
       .withTitle("Quiz #2")
-      .withAssignDate(LocalDateTime.of(2016, 11, 15,0,0))
-      .withDueDate(LocalDateTime.of(2016, 11, 15,0,0))
+      .withAssignDate(LocalDateTime.of(2017, 11, 15,0,0))
+      .withDueDate(LocalDateTime.of(2017, 11, 15,0,0))
       .withClass(class3)
       .withCategory(quiz)
       .build();
@@ -438,8 +440,8 @@ public class DemoDataLoader implements DataLoader {
       .withStatus(Status.active)
       .withTitle("Final Exam")
       .withDescription("Enjoy break!")
-      .withAssignDate(LocalDateTime.of(2016, 9, 7, 0, 0))
-      .withDueDate(LocalDateTime.of(2016, 12, 9, 0, 0))
+      .withAssignDate(LocalDateTime.of(2017, 9, 7, 0, 0))
+      .withDueDate(LocalDateTime.of(2017, 12, 9, 0, 0))
       .withClass(class3)
       .withCategory(exam)
       .build();
@@ -470,12 +472,12 @@ public class DemoDataLoader implements DataLoader {
     
     String [] classSourcedIds = {"demo-class-1","demo-class-2","demo-class-3"};
     
-    long demoClass1StartTime = Timestamp.valueOf("2016-08-30 00:00:00").getTime();
-    long demoClass1EndTime = Timestamp.valueOf("2016-12-11 00:00:00").getTime();
-    long demoClass2StartTime = Timestamp.valueOf("2016-09-01 00:00:00").getTime();
-    long demoClass2EndTime = Timestamp.valueOf("2016-12-10 00:00:00").getTime();
-    long demoClass3StartTime = Timestamp.valueOf("2016-09-08 00:00:00").getTime();
-    long demoClass3EndTime = Timestamp.valueOf("2016-12-13 00:00:00").getTime();
+    long demoClass1StartTime = Timestamp.valueOf("2017-08-30 00:00:00").getTime();
+    long demoClass1EndTime = Timestamp.valueOf("2017-12-11 00:00:00").getTime();
+    long demoClass2StartTime = Timestamp.valueOf("2017-09-01 00:00:00").getTime();
+    long demoClass2EndTime = Timestamp.valueOf("2017-12-10 00:00:00").getTime();
+    long demoClass3StartTime = Timestamp.valueOf("2017-09-08 00:00:00").getTime();
+    long demoClass3EndTime = Timestamp.valueOf("2017-12-13 00:00:00").getTime();
     
     List<Verb> verbs = new ArrayList<>();
     verbs.add(new Verb(3.0,"http://purl.imsglobal.org/vocab/caliper/v1/action#LoggedIn"));
@@ -525,6 +527,12 @@ public class DemoDataLoader implements DataLoader {
             .withType("http://purl.imsglobal.org/caliper/v1/lis/CourseSection")
             .build();
       
+      Membership membership
+        = new Membership.Builder()
+            .withId(UUID.randomUUID().toString())
+            .withType("http://purl.imsglobal.org/caliper/v1/lis/Membership")
+            .withRoles(Collections.singletonList("student"))
+            .build();
                   
       Instant timestamp = null;
       
@@ -615,6 +623,7 @@ public class DemoDataLoader implements DataLoader {
           .withGroup(group)
           .withEventTime(timestamp.atZone(ZoneId.systemDefault()).toLocalDateTime())
           .withAction(verbArray[randomIndex].getVerb())
+          .withMembership(membership)
           .build();
 
       events.add(event);
@@ -625,9 +634,16 @@ public class DemoDataLoader implements DataLoader {
 
   @Override
   public void run() {
+    
+    Collection<Class> classes = classMap.values();
+    for (Class c : classes) {
+      matthewsClient.postClass(c);
+    }
+    
     Collection<Enrollment> teacherEnrollments = teacherEnrollmentMap.values();
     for (Enrollment enrollment : teacherEnrollments) {
       matthewsClient.postEnrollment(enrollment);
+      matthewsClient.postUser(enrollment.getUser());
     }
     
     Collection<User> students = studentMap.values();
